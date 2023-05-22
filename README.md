@@ -1,39 +1,30 @@
-# Grassprojet
-一、作品主题要求
-为了学以致用 体会用程序解决实际问题的过程 提升信息素养
-请同学们充分发挥想象力，紧密结合自己的学习生活，选择一个作品主题进行设计
-内容要求积极向上
+# 本项目用到了PySimpleGUI模块
+用于创建一个简单的GUI界面，包括文本、输入框、文件选择器、下拉列表和按钮等元素
+使用subprocess模块调用ffmpeg命令进行视频转换，根据用户选择的文件名和格式生成输出文件名和命令参数。
+使用sg.popup()方法弹出对话框提示用户转换的进度和结果。
+参考：https://www.pysimplegui.org/en/latest/（pysimpleGUI)
+https://ffmpeg.org(ffmepg)
 
-二、作品设计要求
-作品设计要突出作品的完整性、科学性与规范性，体现计算思维能力，主要
-包含以下两方面内容
+st=>start: 开始
+op1=>operation: 导入PySimpleGUI和subprocess模块
+op2=>operation: 定义窗口布局
+op3=>operation: 创建窗口对象
+op4=>operation: 读取窗口事件和值
+cond1=>condition: 事件是"开始转换"吗？
+op5=>operation: 获取用户选择的文件名和格式
+cond2=>condition: 文件名和格式是否有效？
+op6=>operation: 生成输出文件名
+op7=>operation: 调用ffmpeg进行视频转换
+op8=>operation: 弹出对话框提示转换完成
+op9=>operation: 弹出对话框提示输入错误
+cond3=>condition: 事件是"退出"或窗口关闭吗？
+e=>end: 结束
 
-1.作品介绍
-作品介绍部分应准确描述作品的应用对象、应用场景、应用价值、亮点
-特色等内容
-
-2.作品设计
-作品设计部分需要描述作品的主要功能，要求如下 
-
-⑴ 功能设计，其中具体功能至少包含三项
-
-⑵ 至少选择一项具体功能使用自然语言或流程图描述思路，或编写代码实现
-
-三、作品上交要求
-1.上交时间：2023 年 6 月 12——16 日
-
-2.作品名称：教育 id-学生姓名
-
-3.作品类型：Word 文档（.docx）
-
-4.上交方式：提交到指定
-
-四、注意事项
-作品必须为学生独立完成，提交后进行内容查重，重复作品的作者全部 0 分。
-
-五、评价标准
-评分点 20 分
-主题新颖，内容健康向上 5 分
-作品介绍内容齐全，描述合理 5 分
-作品设计功能完整，描述清晰 5 分
-具体功能思路描述清楚，或代码运行流畅 5
+st->op1->op2->op3->op4
+op4(yes)->cond1
+cond1(yes)->op5->cond2
+cond2(yes)->op6->op7->op8->op4
+cond2(no)->op9->op4
+cond1(no)->cond3
+cond3(yes)->e
+cond3(no)->op4
